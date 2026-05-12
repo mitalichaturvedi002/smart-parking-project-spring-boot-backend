@@ -2,7 +2,6 @@ package com.smart_tech.smart_parking_system.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -24,7 +23,7 @@ public class SmartParkingSpringSecurity {
 
 	private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-
+	@Bean
 	public SecurityFilterChain securityFilterChain(
 			HttpSecurity http) throws Exception {
 
@@ -44,6 +43,7 @@ public class SmartParkingSpringSecurity {
 								"/swagger-ui/**",
 								"/swagger-ui.html"
 						).permitAll()
+						.requestMatchers("/booking/**").hasRole("ADMIN")
 
 						.anyRequest().authenticated()
 				)
