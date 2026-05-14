@@ -67,6 +67,18 @@ public class ParkingSlotBookingService {
                     "Vehicle already parked"
             );
         }
+//        boolean alreadyBooked =
+//                parkingSlotRepository
+//                        .existsByVehicleAndStatus(
+//                                vehicle,
+//                                BookingStatus.ACTIVE
+//                        );
+
+//        if (alreadyBooked) {
+//            throw new RuntimeException(
+//                    "Vehicle already parked"
+//            );
+//        }
 
         // Find available slot
         ParkingSlot slot = parkingSlotRepository
@@ -118,4 +130,3 @@ public class ParkingSlotBookingService {
                 savedBooking.getStatus()
         );
     }
-}

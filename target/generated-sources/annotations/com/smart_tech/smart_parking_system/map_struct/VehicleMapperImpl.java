@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-05-14T21:32:02+0530",
+    date = "2026-05-14T21:38:32+0530",
     comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.46.0.v20260407-0427, environment: Java 21.0.10 (Eclipse Adoptium)"
 )
 @Component
@@ -42,11 +42,11 @@ public class VehicleMapperImpl implements VehicleMapper {
         vehicleResponseDTO.setUserId( vehicleUserId( vehicle ) );
         vehicleResponseDTO.setUserName( vehicleUserName( vehicle ) );
         vehicleResponseDTO.setUserEmail( vehicleUserEmail( vehicle ) );
+        vehicleResponseDTO.setBrand( vehicle.getBrand() );
+        vehicleResponseDTO.setColor( vehicle.getColor() );
         vehicleResponseDTO.setId( vehicle.getId() );
         vehicleResponseDTO.setVehicleNumber( vehicle.getVehicleNumber() );
         vehicleResponseDTO.setVehicleType( vehicle.getVehicleType() );
-        vehicleResponseDTO.setBrand( vehicle.getBrand() );
-        vehicleResponseDTO.setColor( vehicle.getColor() );
 
         return vehicleResponseDTO;
     }
